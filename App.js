@@ -1,20 +1,32 @@
+import react from "react";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer, StackActions } from "@react-navigation/native"
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { CharacterStack } from "./screens/Navigation.js";
+import StartingScreen from "./screens/StartingScreen.js";
+import QuestionScreen from './screens/QuestionScreen'
+
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+      <NavigationContainer >
+       <CharacterStack/>
+      </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
+{/* <Stack.Navigator>
+<Stack.Screen 
+  name = "Starting Screen"
+  component={StartingScreen}
+/>
+
+<Stack.Screen 
+  name = "Question Screen"
+  component={QuestionScreen}
+/>  
+
+
+</Stack.Navigator> */}
